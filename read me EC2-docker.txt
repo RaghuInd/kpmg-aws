@@ -13,7 +13,7 @@ scp -i "u24-demo-key.pem" springbootdocker.jar ec2-user@ec2-13-233-161-140.ap-so
 
 java -jar springbootdocker.jar
 
-5. change the incoming http port number in security to 8090:
+5. change the incoming http/tcp port number in security to 8090:
 
 6. access application using public ip in http:/: 
 
@@ -33,9 +33,10 @@ ssh -i "u24-demo-key.pem" ec2-user@ec2-13-233-161-140.ap-south-1.compute.amazona
 $: unzip docker.zip
 
 $:  cd docker/
+$: sudo yum install docker -y [install docker on ec2]
 $:  sudo docker build --tag=demo-aws-springboot-docker:latest .
 docker images
  sudo docker run -d -p 8085:8090 demo-aws-springboot-docker:latest
  sudo docker ps
 sudo docker logs dfe6833c638f(docker id)
-curl http://localhost:8085
+browse http://<your-ec2-public-dns>:8085
