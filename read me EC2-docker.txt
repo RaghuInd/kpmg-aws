@@ -34,6 +34,7 @@ $: unzip docker.zip
 
 $:  cd docker/
 $: sudo yum install docker -y [install docker on ec2]
+$: sudo systemctl start docker [start docker]
 $:  sudo docker build --tag=demo-aws-springboot-docker:latest .
 docker images
  sudo docker run -d -p 8085:8090 demo-aws-springboot-docker:latest
