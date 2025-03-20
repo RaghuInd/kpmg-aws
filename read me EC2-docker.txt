@@ -41,3 +41,14 @@ docker images
  sudo docker ps
 sudo docker logs dfe6833c638f(docker id)
 browse http://<your-ec2-public-dns>:8085
+
+To run mysql container on docker:
+
+MySQL:
+$:sudo yum update -y
+$:sudo yum install docker -y
+$: sudo systemctl start docker [start docker]
+sudo docker run --name docker-mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=mydb -e MYSQL_USER=user1 -e MYSQL_PASSWORD=user1 -p 3306:3306 -d mysql:latest
+$:sudo docker images
+$: sudo docker ps
+
